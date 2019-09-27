@@ -66,7 +66,7 @@ const ProfileSchema = new Schema ({
 
 },
      description :{
-         type:string
+         type:String
      }
 
     }
@@ -109,19 +109,19 @@ const ProfileSchema = new Schema ({
 
     social:{
         youtube:{
-            type:string
+            type:String
         },
         twitter:{
-            type:string
+            type:String
         },
         facebook:{
-            type:string
+            type:String
         },
         linkedin:{
-            type:string
+            type:String
         },
         instagram:{
-            type:string
+            type:String
         }
     },
 
