@@ -8,6 +8,7 @@ const passport = require('passport');
 
 //loas input validation 
 const validateRegisterInput = require('../../validation/register');
+const validateLoginInput = require('../../validation/login');
 
 //load user model
 
@@ -76,6 +77,12 @@ const avatar= gravatar.url(req.body.email,{
 // @access  Public 
 
 router.post('/login',(req,res)=>{
+
+    const {errors ,isValid} = validateLoginInput(req.body);
+    //check validation
+    if(!isValid){
+        return res.status(400).json(errors);
+    }
 const email = req.body.email;
 const password = req.body.password;
 
