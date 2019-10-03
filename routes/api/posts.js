@@ -165,9 +165,11 @@ router.post('/comment/:id',passport.authenticate('jwt',{session:false}),(req,res
         //addd to comments array
         post.comments.unshift(newComment);
         //save
-        post.save().then(post=>res.json(post))
+        post.save().then(post=>res.json(post));
     })
-    .catch(err=>res.status(404).json({postnotfound:'no post found'}))
+    .catch(err=>res.status(404).json({postnotfound:'no post found'}));
 });
+
+
 
 module.exports =router;
