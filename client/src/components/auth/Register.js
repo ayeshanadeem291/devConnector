@@ -7,7 +7,7 @@ import React, { Component } from 'react'
             name:'',
             email:'',
             password:'',
-            password:'',
+            password2:'',
             errors:{}
         }
         this.onChange = this.onChange.bind(this);
