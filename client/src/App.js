@@ -12,7 +12,15 @@ import Landing from './components/layout/Landing'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
 
-
+//check fro token
+if(localStorage.jwtToken){
+  //set auth token header auth
+   setAuthToken(localStorage.jwtToken);
+   //decode token and get users info
+   const decoded = jwt_decode(localStorage.jwtToken);
+   //set user and isAuthenticated
+   store.dispatch(setCurrentUser(decoded));
+}
 function App() {
   return (
     <Provider store={store}>
